@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "changing github fonts",
+	"version": "1.0",
+	"description": "change fonts for github",
+	"options_page": "config.html",
+	"browser_action": {
+		"default_popup": "config.html",
+		"_default_icon": "icon.png"
+	},
+	"unsafe-inline": "",
+	"permissions": [
+		"storage",
+		"activeTab"
+
+	],
+	"content_scripts": [{
+		"matches": ["https://github.com/*"],
+		"js": ["contentscrpt.js"],
+		"run_at": "document_idle"
+	}],
+	"_icons": {
+		"128": "icon.png"
+	}
+}
